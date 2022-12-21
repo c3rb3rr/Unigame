@@ -1,1 +1,3 @@
-# abstrakcyjne_projekt
+# abstrakcyjne_projekt - Roguelike game
+
+Patryk Wypych
