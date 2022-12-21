@@ -1,0 +1,1 @@
+# abstrakcyjne_projekt
