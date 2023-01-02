@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     //from where we are fireing the bullet (position on the world)
     public Transform fireStartPoint;
     // Start is called before the first frame update
+    public float timeBetweenBullets;
+    private float bulletCounter;
     void Start()
     {
         _cam = Camera.main;
@@ -58,6 +60,18 @@ public class PlayerController : MonoBehaviour
         {
             // create a copy of specific object
             Instantiate(bullet, fireStartPoint.position, fireStartPoint.rotation);
+            bulletCounter = timeBetweenBullets;
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            bulletCounter -= Time.deltaTime;
+            if (bulletCounter <= 0)
+            {
+                Instantiate(bullet, fireStartPoint.position, fireStartPoint.rotation);
+                bulletCounter = timeBetweenBullets;
+            }
+                
         }
         
         // animation of walking

@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 7.5
   rb2d: {fileID: 7571447283906906265}
+  impactEffect: {fileID: 2588765835668999998, guid: 66ecc788e6c955240ae890f57525f2b2, type: 3}
 --- !u!61 &7571447283906906342
 BoxCollider2D:
   m_ObjectHideFlags: 0
