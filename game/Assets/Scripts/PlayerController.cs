@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     private Vector2 _moveInput;
+    // where is player position - used in EnemyController script
+    public static PlayerController instance;
     public Rigidbody2D rb2d;
     public Transform gunArm;
     private Camera _cam;
@@ -16,8 +18,14 @@ public class PlayerController : MonoBehaviour
     //from where we are fireing the bullet (position on the world)
     public Transform fireStartPoint;
     // Start is called before the first frame update
-    public float timeBetweenBullets;
-    private float bulletCounter;
+    public float fireOfRate;
+    private float _bulletCounter;
+    
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         _cam = Camera.main;
@@ -60,16 +68,16 @@ public class PlayerController : MonoBehaviour
         {
             // create a copy of specific object
             Instantiate(bullet, fireStartPoint.position, fireStartPoint.rotation);
-            bulletCounter = timeBetweenBullets;
+            _bulletCounter = fireOfRate;
         }
 
         if (Input.GetMouseButton(0))
         {
-            bulletCounter -= Time.deltaTime;
-            if (bulletCounter <= 0)
+            _bulletCounter -= Time.deltaTime;
+            if (_bulletCounter <= 0)
             {
                 Instantiate(bullet, fireStartPoint.position, fireStartPoint.rotation);
-                bulletCounter = timeBetweenBullets;
+                _bulletCounter = fireOfRate;
             }
                 
         }
