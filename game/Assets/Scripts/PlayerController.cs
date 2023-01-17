@@ -20,7 +20,18 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     public float fireOfRate;
     private float _bulletCounter;
-    
+    // used for changing the alfa channel while invincible in playerHealthController
+    public SpriteRenderer bodySpriteRenderer;
+
+    private float _activeMoveSpeed;
+    public float dashSpeed = 8f;
+    public float dashLength = .5f;
+    public float dashCooldown = 3f;
+    public float dashInvincibility = .5f;
+    private float _dashCoolCounter;
+    [HideInInspector]
+    public float dashCounter;
+
     private void Awake()
     {
         instance = this;
@@ -29,6 +40,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _cam = Camera.main;
+        _activeMoveSpeed = moveSpeed;
     }
 
     // Update is called once per frame
@@ -40,7 +52,7 @@ public class PlayerController : MonoBehaviour
         
         // transform.position += new Vector3(moveInput.x * Time.deltaTime * moveSpeed,
         //     moveInput.y * Time.deltaTime * moveSpeed, 0f);
-        rb2d.velocity = _moveInput * moveSpeed;
+        rb2d.velocity = _moveInput * _activeMoveSpeed;
         // position of mouse
         Vector3 mousePos = Input.mousePosition;
         // position of main camera
@@ -79,7 +91,34 @@ public class PlayerController : MonoBehaviour
                 Instantiate(bullet, fireStartPoint.position, fireStartPoint.rotation);
                 _bulletCounter = fireOfRate;
             }
+        }
+
+        // mechanic of dashing
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            if (_dashCoolCounter <= 0 && dashCounter <= 0)
+            {
+                _activeMoveSpeed = dashSpeed;
+                dashCounter = dashLength;
                 
+                anim.SetTrigger("dash");
+                PlayerHealthController.instance.MakeInvincible(dashInvincibility);
+            }
+        }
+
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+            if (dashCounter <= 0)
+            {
+                _activeMoveSpeed = moveSpeed;
+                _dashCoolCounter = dashCooldown;
+            }
+        }
+
+        if (_dashCoolCounter > 0)
+        {
+            _dashCoolCounter -= Time.deltaTime;
         }
         
         // animation of walking

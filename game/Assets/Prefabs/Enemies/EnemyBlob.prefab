@@ -101,8 +101,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1131276949
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -7945901444079236628, guid: 02027016afbc5d544ab92ba819bc8094, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6513da23298b624082df9f37b541a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 0}
   rb2d: {fileID: 8965100453346393442}
   moveSpeed: 3
   whenToChasePlayer: 7
@@ -205,6 +206,7 @@ MonoBehaviour:
   bullet: {fileID: 1749241836386062442, guid: 964f8b87492d4c84db3700fb6bf32b5b, type: 3}
   fireStartPoint: {fileID: 1580798960777918636}
   fireOfRate: 1.5
+  shootRange: 0
 --- !u!50 &8965100453346393442
 Rigidbody2D:
   serializedVersion: 4

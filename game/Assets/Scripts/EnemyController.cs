@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (body.isVisible)
+        if (body.isVisible && PlayerController.instance.gameObject.activeInHierarchy)
         {
             if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < whenToChasePlayer)
             {
@@ -64,6 +64,11 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            rb2d.velocity = Vector2.zero; //when player is dead, stop moving 
+        }
+            
     }
 
     public void DamageEnemy(int damage)
