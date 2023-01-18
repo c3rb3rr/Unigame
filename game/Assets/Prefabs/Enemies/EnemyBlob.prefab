@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6513da23298b624082df9f37b541a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 0}
+  body: {fileID: 8965100451713462562}
   rb2d: {fileID: 8965100453346393442}
   moveSpeed: 3
   whenToChasePlayer: 7
@@ -206,7 +206,9 @@ MonoBehaviour:
   bullet: {fileID: 1749241836386062442, guid: 964f8b87492d4c84db3700fb6bf32b5b, type: 3}
   fireStartPoint: {fileID: 1580798960777918636}
   fireOfRate: 1.5
-  shootRange: 0
+  shootRange: 10
+  enemyDeath: 1
+  enemyHurt: 2
 --- !u!50 &8965100453346393442
 Rigidbody2D:
   serializedVersion: 4

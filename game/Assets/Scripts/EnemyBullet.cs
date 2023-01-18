@@ -8,6 +8,8 @@ public class EnemyBullet : MonoBehaviour
 {
     public float speed;
     private Vector3 _direction;
+    // sfx
+    public int bulletImpact = 4;
     
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class EnemyBullet : MonoBehaviour
             PlayerHealthController.instance.DamagePlayer();
         }
         Destroy(gameObject);
+        AudioManager.instance.playSFX(bulletImpact);
     }
 
     private void OnBecameInvisible()

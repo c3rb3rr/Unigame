@@ -20,6 +20,9 @@ public class EnemyController : MonoBehaviour
     public float fireOfRate;
     private float _bulletCounter;
     public float shootRange;
+    // sfx
+    public int enemyDeath;
+    public int enemyHurt;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +63,7 @@ public class EnemyController : MonoBehaviour
                 if (_bulletCounter <= 0)
                 {
                     Instantiate(bullet, fireStartPoint.position, fireStartPoint.rotation);
+                    PlayerController.instance.RandomShootingSfx();
                     _bulletCounter = fireOfRate;
                 }
             }
@@ -75,9 +79,11 @@ public class EnemyController : MonoBehaviour
     {
         Instantiate(hitEffect, transform.position, transform.rotation);
         heathPoints -= damage;
+        AudioManager.instance.playSFX(enemyHurt);
         if (heathPoints <= 0)
         {
             Destroy(gameObject);
+            AudioManager.instance.playSFX(enemyDeath);
             Instantiate(deathSplatters[Random.Range(0, deathSplatters.Length)], transform.position,
                 Quaternion.Euler(0, 0, Random.Range(0, 359)));
         }

@@ -7,6 +7,8 @@ public class HealthPickup : MonoBehaviour
 {
     public int healthAmount = 1;
     public float invicibleTime = 0.5f;
+    // sfx
+    public int playerPickupHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +28,9 @@ public class HealthPickup : MonoBehaviour
     {
         if (other.tag == "Player" && invicibleTime <= 0)
         {
-            PlayerHealthController.instance.healPlayer(healthAmount);
+            PlayerHealthController.instance.HealPlayer(healthAmount);
             Destroy(gameObject);
+            AudioManager.instance.playSFX(playerPickupHealth);
         }
     }
 }

@@ -10,6 +10,9 @@ public class UIController : MonoBehaviour
     public Slider healthSlider;
     public Text healthText;
     public GameObject deathScreen;
+    public Image betweenLevelScreen;
+    public float fadeSpeed;
+    private bool _fadeToBlack, _fadeOutBlack;
 
     private void Awake()
     {
@@ -19,12 +22,41 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _fadeToBlack = false;
+        _fadeOutBlack = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_fadeOutBlack)
+        {
+            betweenLevelScreen.color = new Color(betweenLevelScreen.color.r,
+                betweenLevelScreen.color.g,
+                betweenLevelScreen.color.b,
+                Mathf.MoveTowards(betweenLevelScreen.color.a, 0f, fadeSpeed * Time.deltaTime));
+            if (betweenLevelScreen.color.a == 0f)
+            {
+                _fadeOutBlack = false;
+            }
+        }
         
+        if (_fadeToBlack)
+        {
+            betweenLevelScreen.color = new Color(betweenLevelScreen.color.r,
+                betweenLevelScreen.color.g,
+                betweenLevelScreen.color.b,
+                Mathf.MoveTowards(betweenLevelScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
+            if (betweenLevelScreen.color.a == 1f)
+            {
+                _fadeToBlack = false;
+            }
+        }
+    }
+
+    public void StartFadeToBlack()
+    {
+        _fadeToBlack = true;
+        _fadeOutBlack = false;
     }
 }

@@ -9,8 +9,9 @@ public class PlayerBullet : MonoBehaviour
     public float bulletSpeed = 7.5f;
     public Rigidbody2D rb2d;
     public GameObject impactEffect;
-
     public int damage = 50;
+    // sfx
+    public int bulletImpact = 4;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class PlayerBullet : MonoBehaviour
     {
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);
+        AudioManager.instance.playSFX(bulletImpact);
         if (other.tag == "Enemy")
         {
             other.GetComponent<EnemyController>().DamageEnemy(damage);

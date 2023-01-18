@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8484054532738686979}
   - component: {fileID: 8484054532738686976}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Characters_shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1128783229
-  m_SortingLayer: 1
+  m_SortingLayer: 6
   m_SortingOrder: -1
   m_Sprite: {fileID: -735786788, guid: a47294d8f066c634d90ee371916313ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8484054532801056153}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fireStartPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8484054532974295171}
   - component: {fileID: 8484054532974295168}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Characters_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1128783229
-  m_SortingLayer: 1
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: -690307208, guid: a47294d8f066c634d90ee371916313ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 8484054533673097636}
   - component: {fileID: 8484054533673097637}
   - component: {fileID: 8484054533673097634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -251,12 +251,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rb2d: {fileID: 8484054533673097637}
+  playerRigidbody2D: {fileID: 8484054533673097637}
   gunArm: {fileID: 8484054534115694496}
   anim: {fileID: 8484054533673097634}
   bullet: {fileID: 7571447283906906266, guid: b764bda30ea754a47ac0131abf8e35eb, type: 3}
   fireStartPoint: {fileID: 8484054532801056153}
   fireOfRate: 0.2
+  bodySpriteRenderer: {fileID: 8484054533681654272}
+  dashSpeed: 8
+  dashLength: 0.5
+  dashCooldown: 2
+  dashInvincibility: 0.5
+  dashCounter: 0
+  playerDash: 7
+  playerShooting: 0
+  canMove: 1
 --- !u!58 &8484054533673097636
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -324,7 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8484054533681654275}
   - component: {fileID: 8484054533681654272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Characters_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +347,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8484054533681654274}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -385,7 +394,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1128783229
-  m_SortingLayer: 1
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -191247807, guid: a47294d8f066c634d90ee371916313ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -408,7 +417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8484054534115694496}
   - component: {fileID: 8484054534115694497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Guns_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +479,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1128783229
-  m_SortingLayer: 1
+  m_SortingLayer: 6
   m_SortingOrder: 2
   m_Sprite: {fileID: -4254059877319897387, guid: 48d85d1ef51430e42b6aef57f02c863d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -11,6 +11,10 @@ public class PlayerHealthController : MonoBehaviour
 
     public float dmgInvicibleLength = 1f;
     private float _invincibleCount;
+    
+    // sfx
+    public int playerDeath;
+    public int playerHurt;
 
     private void Awake()
     {
@@ -47,6 +51,7 @@ public class PlayerHealthController : MonoBehaviour
     {
         if (_invincibleCount <= 0)
         {
+            AudioManager.instance.playSFX(playerHurt);
             currentHP--;
             _invincibleCount = dmgInvicibleLength;
             
@@ -58,6 +63,7 @@ public class PlayerHealthController : MonoBehaviour
             
             if (currentHP <= 0)
             {
+                AudioManager.instance.playSFX(playerDeath);
                 PlayerController.instance.gameObject.SetActive(false);
                 UIController.instance.deathScreen.SetActive(true);
                 AudioManager.instance.PlayGameOver();
@@ -78,7 +84,7 @@ public class PlayerHealthController : MonoBehaviour
             .5f);
     }
 
-    public void healPlayer(int healthAmount)
+    public void HealPlayer(int healthAmount)
     {
         if (currentHP < maxHP)
         {
