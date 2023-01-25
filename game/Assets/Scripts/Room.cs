@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    public bool closeDoorsWhenEntered, openRoomWhenEnemiesCleared;
+    public bool closeDoorsWhenEntered;
+    // public bool openRoomWhenEnemiesCleared;
     public GameObject[] doors;
-    private bool _roomActive;
-    public List<GameObject> enemies = new List<GameObject>();
+    [HideInInspector]
+    public bool roomActive;
+    // public List<GameObject> enemies = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -18,25 +20,34 @@ public class Room : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemies.Count > 0 && _roomActive && openRoomWhenEnemiesCleared)
-        {
-            for (int i = 0; i < enemies.Count; i++)
-            {
-                if (enemies[i] == null)
-                {
-                    enemies.RemoveAt(i);
-                    i--;
-                }
-            }
+        // if (enemies.Count > 0 && roomActive && openRoomWhenEnemiesCleared)
+        // {
+        //     for (int i = 0; i < enemies.Count; i++)
+        //     {
+        //         if (enemies[i] == null)
+        //         {
+        //             enemies.RemoveAt(i);
+        //             i--;
+        //         }
+        //     }
+        //
+        //     if (enemies.Count == 0)
+        //     {
+        //         foreach (GameObject door in doors)
+        //         {
+        //             door.SetActive(false);
+        //             closeDoorsWhenEntered = false;
+        //         }
+        //     }
+        // }
+    }
 
-            if (enemies.Count == 0)
-            {
-                foreach (GameObject door in doors)
-                {
-                    door.SetActive(false);
-                    closeDoorsWhenEntered = false;
-                }
-            }
+    public void OpenDoors()
+    {
+        foreach (GameObject door in doors)
+        {
+            door.SetActive(false);
+            closeDoorsWhenEntered = false;
         }
     }
 
@@ -53,7 +64,7 @@ public class Room : MonoBehaviour
                 }
             }
 
-            _roomActive = true;
+            roomActive = true;
         }
     }
 
@@ -61,7 +72,7 @@ public class Room : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            _roomActive = false;
+            roomActive = false;
         }
     }
 }

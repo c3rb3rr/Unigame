@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8359441435910918745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8359441435910918744}
+  m_Layer: 0
+  m_Name: Generation Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8359441435910918744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8359441435910918745}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8359441436744909677}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8359441436744909679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8359441436744909677}
+  - component: {fileID: 8359441436744909678}
+  m_Layer: 0
+  m_Name: Level Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8359441436744909677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8359441436744909679}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8359441435910918744}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8359441436744909678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8359441436744909679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db02adf8f4270e4a85893b4d95d1921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomLayout: {fileID: 5237601834014405835, guid: dcc4d27e208f753449f025cd3ffec1ee, type: 3}
+  distance: 10
+  startColor: {r: 0, g: 1, b: 0, a: 1}
+  endColor: {r: 1, g: 0, b: 0, a: 1}
+  generatorPoint: {fileID: 8359441435910918744}
+  xOffSet: 18
+  yOffSet: 10
+  whatIsRoom:
+    serializedVersion: 2
+    m_Bits: 8192
+  rooms:
+    roomU: {fileID: 640039888378498395, guid: c55308b3fad0b914d860cc180dbd361a, type: 3}
+    roomD: {fileID: 2394295882052217644, guid: f90c326427bb71549a4238375b75ece3, type: 3}
+    roomL: {fileID: 8417261537514176360, guid: cb8ef031142ba4f41b11b719fa00a6fe, type: 3}
+    roomR: {fileID: 8358571987167731436, guid: d95b1e1879e916d42b697ca39944449f, type: 3}
+    roomUD: {fileID: 7239511981287971457, guid: 53b5a8796067ca24887cfa853f44fd8f, type: 3}
+    roomUL: {fileID: 2583389204049435493, guid: 88e0266c842d29042b97f0855b757d49, type: 3}
+    roomUR: {fileID: 5258604386935266201, guid: 994b0863a570e5a4ca0cd426865698fa, type: 3}
+    roomLR: {fileID: 5311251924114833177, guid: 534022087f6e5864f952a5cfe5d3c668, type: 3}
+    roomDL: {fileID: 6310778465740270245, guid: 200d793d6bfeff7469a672bc9388370d, type: 3}
+    roomDR: {fileID: 39764964288925335, guid: 201d2ef2b27090f4384346a790b3edfb, type: 3}
+    roomUDR: {fileID: 3765316670945297861, guid: db9cc044ad4006d41bc9e6c5132dd79b, type: 3}
+    roomDLR: {fileID: 3536667154042933696, guid: 4397162b1fa62424b9566723bfc4b316, type: 3}
+    roomUDL: {fileID: 8116605308894127739, guid: 6c26094868f57604ca0ccec3cefb4947, type: 3}
+    roomULR: {fileID: 7349557114234316945, guid: fc0e05a1f4e999c40ba09231f5152fbc, type: 3}
+    roomUDLR: {fileID: 4884441811598559459, guid: 68354aa988b10694b8597f89e25b1738, type: 3}
+  floorStart: {fileID: 5592134081508123703, guid: e186f1abcc14707489ddf83fe4a0c7c3, type: 3}
+  floorEnd: {fileID: 1762343891657598382, guid: 4780ff89112aade42acc72b892d4fd7f, type: 3}
+  potentialFloors:
+  - {fileID: 5592134081508123703, guid: e186f1abcc14707489ddf83fe4a0c7c3, type: 3}
+  - {fileID: 7496738058765922877, guid: 30c9b60a95ece83409d43a0a64a261a6, type: 3}
+  selectedDir: 0
