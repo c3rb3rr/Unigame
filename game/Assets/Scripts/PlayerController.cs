@@ -29,12 +29,13 @@ public class PlayerController : MonoBehaviour
     public float dashLength = .5f;
     public float dashCooldown = 3f;
     public float dashInvincibility = .5f;
-    private float _dashCoolCounter;
+
     [HideInInspector]
     public float dashCounter;
     // sfx
     public int playerDash;
     public int playerShooting;
+    public PlayerStaminaController playerStaminaController;
     
     [HideInInspector]
     // player shouldnt move after completing the level
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         _cam = Camera.main;
         _activeMoveSpeed = moveSpeed;
+        playerStaminaController = GetComponent<PlayerStaminaController>();
     }
 
     // Update is called once per frame
@@ -108,7 +110,7 @@ public class PlayerController : MonoBehaviour
             // mechanic of dashing
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                if (_dashCoolCounter <= 0 && dashCounter <= 0)
+                if (dashCounter <= 0 && playerStaminaController.UseStamina(33))
                 {
                     _activeMoveSpeed = dashSpeed;
                     dashCounter = dashLength;
@@ -125,14 +127,9 @@ public class PlayerController : MonoBehaviour
                 if (dashCounter <= 0)
                 {
                     _activeMoveSpeed = moveSpeed;
-                    _dashCoolCounter = dashCooldown;
                 }
             }
-
-            if (_dashCoolCounter > 0)
-            {
-                _dashCoolCounter -= Time.deltaTime;
-            }
+            
 
             // animation of walking
             if (_moveInput != Vector2.zero)

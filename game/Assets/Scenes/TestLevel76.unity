@@ -2613,6 +2613,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1754371646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8484054533673097641, guid: dd83e7d51dd38c1489336965eabbb21a, type: 3}
+  m_PrefabInstance: {fileID: 8484054532750352190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1754371647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754371646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab25ef3ce2b42714e83074c0cce3ace2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StaminaBar: {fileID: 1998995129}
 --- !u!1 &1768475050
 GameObject:
   m_ObjectHideFlags: 0
@@ -3386,6 +3404,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1998995129 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2889008350122524046, guid: d8b9a4a927c8bc940a7d0760830443b5, type: 3}
+  m_PrefabInstance: {fileID: 1380053299298860060}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1999547128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3742,6 +3771,22 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1831532170756320051, guid: d8b9a4a927c8bc940a7d0760830443b5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831532170756320051, guid: d8b9a4a927c8bc940a7d0760830443b5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889008350122524046, guid: d8b9a4a927c8bc940a7d0760830443b5, type: 3}
+      propertyPath: m_MaxValue
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718306209118658550, guid: d8b9a4a927c8bc940a7d0760830443b5, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8b9a4a927c8bc940a7d0760830443b5, type: 3}
 --- !u!1001 &8484054532750352190
@@ -3751,6 +3796,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8484054533673097638, guid: dd83e7d51dd38c1489336965eabbb21a, type: 3}
+      propertyPath: playerStaminaController
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8484054533673097639, guid: dd83e7d51dd38c1489336965eabbb21a, type: 3}
       propertyPath: m_RootOrder
       value: 1
