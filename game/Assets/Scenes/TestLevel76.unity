@@ -216,7 +216,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 862f83d31fde6394dbde68ee0ac9fea2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -344,7 +344,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4748714ac39bba245ac5339217aa9986, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -506,7 +506,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f31a6a473e0a3ed4abe14dd4dbf4dbca, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -634,7 +634,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 297eaa725d4cb44449b0a8d9cdc95591, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -762,7 +762,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8801842e652589f43b2c75dcd7430235, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -895,7 +895,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c36fa7f6b67b43046914d9ec96380ef6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1201,7 +1201,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 68e35de993d96ac409176d03b7889f30, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1329,7 +1329,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4434db9f00e67cb4aa61dfb33092e031, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1413,6 +1413,63 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &870726204
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 239071277754931498, guid: c126fa005601d1342be5c9227435f787, type: 3}
+      propertyPath: m_Name
+      value: EnemyBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 239071277754931500, guid: c126fa005601d1342be5c9227435f787, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 239071277754931500, guid: c126fa005601d1342be5c9227435f787, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.0739288
+      objectReference: {fileID: 0}
+    - target: {fileID: 239071277754931500, guid: c126fa005601d1342be5c9227435f787, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.510169
+      objectReference: {fileID: 0}
+    - target: {fileID: 239071277754931500, guid: c126fa005601d1342be5c9227435f787, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 239071277754931500, guid: c126fa005601d1342be5c9227435f787, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 239071277754931500, guid: c126fa005601d1342be5c9227435f787, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 239071277754931500, guid: c126fa005601d1342be5c9227435f787, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 239071277754931500, guid: c126fa005601d1342be5c9227435f787, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 239071277754931500, guid: c126fa005601d1342be5c9227435f787, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 239071277754931500, guid: c126fa005601d1342be5c9227435f787, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 239071277754931500, guid: c126fa005601d1342be5c9227435f787, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c126fa005601d1342be5c9227435f787, type: 3}
 --- !u!1 &900695208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,7 +1499,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2716048bffa1cf845a67193bd9739c2f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1573,7 +1630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHP: 0
-  maxHP: 5
+  maxHP: 10
   dmgInvicibleLength: 1
   playerDeath: 8
   playerHurt: 10
@@ -1592,7 +1649,7 @@ Transform:
   - {fileID: 226407215}
   - {fileID: 30773696}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &924239566
 MonoBehaviour:
@@ -1831,7 +1888,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a6d3a9a97d641674180517302d5d1d73, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1924,7 +1981,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8359441436744909677, guid: f0704fc04fc7d2142a9152ee2db711c9, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8359441436744909677, guid: f0704fc04fc7d2142a9152ee2db711c9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1966,6 +2023,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8359441436744909678, guid: f0704fc04fc7d2142a9152ee2db711c9, type: 3}
+      propertyPath: potentialFloors.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359441436744909678, guid: f0704fc04fc7d2142a9152ee2db711c9, type: 3}
+      propertyPath: potentialFloors.Array.data[0]
+      value: 
+      objectReference: {fileID: 7496738058765922877, guid: 30c9b60a95ece83409d43a0a64a261a6, type: 3}
+    - target: {fileID: 8359441436744909678, guid: f0704fc04fc7d2142a9152ee2db711c9, type: 3}
+      propertyPath: potentialFloors.Array.data[1]
+      value: 
+      objectReference: {fileID: 3823193273802049568, guid: 69ca30fffff87d240bdda12cf46cfb80, type: 3}
+    - target: {fileID: 8359441436744909678, guid: f0704fc04fc7d2142a9152ee2db711c9, type: 3}
+      propertyPath: potentialFloors.Array.data[2]
+      value: 
+      objectReference: {fileID: 5657399970524230442, guid: d88cb2ce4fe922145843fa906a4e1dc8, type: 3}
+    - target: {fileID: 8359441436744909678, guid: f0704fc04fc7d2142a9152ee2db711c9, type: 3}
+      propertyPath: potentialFloors.Array.data[3]
+      value: 
+      objectReference: {fileID: 2301335089093491167, guid: 93298e3c10e06c6468ab1b30b68964f5, type: 3}
+    - target: {fileID: 8359441436744909678, guid: f0704fc04fc7d2142a9152ee2db711c9, type: 3}
+      propertyPath: potentialFloors.Array.data[4]
+      value: 
+      objectReference: {fileID: 7289242169623088379, guid: 01f300944111933438cfc8c29e94e5e2, type: 3}
+    - target: {fileID: 8359441436744909678, guid: f0704fc04fc7d2142a9152ee2db711c9, type: 3}
+      propertyPath: potentialFloors.Array.data[5]
+      value: 
+      objectReference: {fileID: 8860032427942026423, guid: b001b6b8eda716549bf2513c87bc45a0, type: 3}
+    - target: {fileID: 8359441436744909678, guid: f0704fc04fc7d2142a9152ee2db711c9, type: 3}
+      propertyPath: potentialFloors.Array.data[6]
+      value: 
+      objectReference: {fileID: 7774345647431623520, guid: 3c6184056a5f81945aa516d7e326ee4e, type: 3}
+    - target: {fileID: 8359441436744909678, guid: f0704fc04fc7d2142a9152ee2db711c9, type: 3}
+      propertyPath: potentialFloors.Array.data[7]
+      value: 
+      objectReference: {fileID: 2789574820622943064, guid: 692e19c051ef311499006c30f9e6c4ab, type: 3}
+    - target: {fileID: 8359441436744909678, guid: f0704fc04fc7d2142a9152ee2db711c9, type: 3}
+      propertyPath: potentialFloors.Array.data[8]
+      value: 
+      objectReference: {fileID: 5592134081508123703, guid: e186f1abcc14707489ddf83fe4a0c7c3, type: 3}
     - target: {fileID: 8359441436744909679, guid: f0704fc04fc7d2142a9152ee2db711c9, type: 3}
       propertyPath: m_Name
       value: Level Generator
@@ -2032,7 +2129,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c7fdd0addf2696944ad1eb26af6895ef, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.179
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2160,7 +2257,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3d2732bb9fb026340a6d7deb90b18af2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2401,7 +2498,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 717f629557c500e4b9ba2fce9e34f283, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2529,7 +2626,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 41b6711345326694a8dec356f48fef0d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2642,7 +2739,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2009a880a931f594fa7067df4371cb63, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.052
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2785,7 +2882,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9a86f0cfff75f9b40bd7936f13a38758, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2898,7 +2995,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 63620f10efbc0e5429fce79111a3dbcb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3046,7 +3143,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f52616f3be2e1324382bd0f2bc65f340, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3174,7 +3271,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0e0b9f7f4b22bc5489de2525a44d6c3c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3302,7 +3399,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9d2456fff877bbc43a8b0f0de1528b91, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3543,7 +3640,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f7c555902caa38a45ae0792e61223b06, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.015
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3644,7 +3741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380053297370213216, guid: d8b9a4a927c8bc940a7d0760830443b5, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1380053297370213216, guid: d8b9a4a927c8bc940a7d0760830443b5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3753,7 +3850,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8484054533673097639, guid: dd83e7d51dd38c1489336965eabbb21a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8484054533673097639, guid: dd83e7d51dd38c1489336965eabbb21a, type: 3}
       propertyPath: m_LocalPosition.x

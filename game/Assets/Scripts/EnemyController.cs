@@ -4,30 +4,61 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    [Header("Basics")]
     public SpriteRenderer body;
     public Rigidbody2D rb2d;
     public float moveSpeed;
-    public float whenToChasePlayer;
-    private Vector3 _moveDirection;
+    public Vector3 moveDirection;
     public Animator anim;
     public int heathPoints = 200;
     public GameObject[] deathSplatters;
     public GameObject hitEffect;
+    
+    [Header("Chasing Player")]
+    public float whenToChasePlayer;
+    public bool shouldChasePlayer;
 
-    public bool shouldShoot; 
+    [Header("Bullets")]
+    public bool shouldShoot;
     public GameObject bullet;
     public Transform fireStartPoint;
     public float fireOfRate;
-    private float _bulletCounter;
+    public float bulletCounter;
     public float shootRange;
+
     // sfx
     public int enemyDeath;
     public int enemyHurt;
 
+
+    // new enemies - running away
+    // [Header("Running Away from Player")]
+    // public bool shouldRunAway;
+    // public float runAwayRange;
+
+    // new enemy - wandering
+    [Header("Wandering")]
+    public bool shouldWander;
+    public float wanderTime;
+    public float wanderPauseLength;
+    private float _wanderCounter, _pauseCounter;
+    private Vector3 _wanderDirection;
+    // private float _randomWanderCounterTime;
+    
+    // enemy - patroling
+    [Header("Patroling")]
+    public bool shouldPatrol;
+    public Transform[] patrolPoints;
+    private int _currentPatrolPoint;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (shouldShoot)
+        {
+            _pauseCounter = Random.Range(wanderPauseLength * 0.1f, wanderPauseLength * 1.2f);
+        }
     }
 
     // Update is called once per frame
@@ -35,20 +66,72 @@ public class EnemyController : MonoBehaviour
     {
         if (body.isVisible && PlayerController.instance.gameObject.activeInHierarchy)
         {
-            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < whenToChasePlayer)
+            moveDirection = Vector3.zero;
+            
+            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < whenToChasePlayer && shouldChasePlayer)
             {
-                _moveDirection = PlayerController.instance.transform.position - transform.position;
+                moveDirection = PlayerController.instance.transform.position - transform.position;
             }
             else
             {
-                _moveDirection = Vector3.zero;
+                if (shouldWander)
+                {
+                    if (_wanderCounter > 0)
+                    {
+                        _wanderCounter -= Time.deltaTime;
+                        // _randomWanderCounterTime = Random.Range(0, _wanderCounter);
+                        // TODO: dodać więcej random ruchów, że rusza się przez losowy czas, a nie zawsze tak samo długo
+                        moveDirection = _wanderDirection;
+                        
+                        if (_wanderCounter <= 0)
+                        {
+                            _pauseCounter = Random.Range(wanderPauseLength * 0.1f, wanderPauseLength * 1.2f);
+                        }
+                    }
+
+                    if (_pauseCounter > 0)
+                     {
+                         _pauseCounter -= Time.deltaTime;
+
+                         if (_pauseCounter <= 0)
+                         {
+                             _wanderCounter = Random.Range(wanderPauseLength * 0.1f, wanderPauseLength * 1.2f);
+                             _wanderDirection = new Vector3(Random.Range(-1, 1f), Random.Range(-1f, 1f), 0f);
+                         }
+                     }
+                }
+
+                if (shouldPatrol)
+                {
+                    moveDirection = patrolPoints[_currentPatrolPoint].position - transform.position;
+                    if (Vector3.Distance(transform.position, patrolPoints[_currentPatrolPoint].position) < .5f)
+                    {
+                        _currentPatrolPoint++;
+                        if (_currentPatrolPoint >= patrolPoints.Length)
+                        {
+                            _currentPatrolPoint = 0;
+                        }
+                    }
+                }
             }
 
-            _moveDirection.Normalize();
-            rb2d.velocity = _moveDirection * moveSpeed;
+            // if (shouldRunAway && Vector3.Distance(transform.position, PlayerController.instance.transform.position) <
+            //     runAwayRange)
+            // {
+            //     moveDirection = -1 * (PlayerController.instance.transform.position - transform.position);
+            // }
+            
+            
+            // else
+            // {
+            //     moveDirection = Vector3.zero;
+            // }
+
+            moveDirection.Normalize();
+            rb2d.velocity = moveDirection * moveSpeed;
 
             // animation of walking
-            if (_moveDirection != Vector3.zero)
+            if (moveDirection != Vector3.zero)
             {
                 anim.SetBool("isEnemyMoving", true);
             }
@@ -59,12 +142,12 @@ public class EnemyController : MonoBehaviour
 
             if (shouldShoot & Vector3.Distance(PlayerController.instance.transform.position, transform.position) < shootRange)
             {
-                _bulletCounter -= Time.deltaTime;
-                if (_bulletCounter <= 0)
+                bulletCounter -= Time.deltaTime;
+                if (bulletCounter <= 0)
                 {
                     Instantiate(bullet, fireStartPoint.position, fireStartPoint.rotation);
                     PlayerController.instance.RandomShootingSfx();
-                    _bulletCounter = fireOfRate;
+                    bulletCounter = fireOfRate;
                 }
             }
         }
