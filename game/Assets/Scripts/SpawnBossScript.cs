@@ -11,15 +11,12 @@ public class SpawnBossScript : MonoBehaviour
     [SerializeField]
     private SpriteRenderer BossCardRenderer;
     [SerializeField]
-    private AudioManager AudioManager;
-    [SerializeField]
     private GameObject Boss;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        // AudioManager = GetComponent<AudioManager>();
         var color = BossCardRenderer.color;
         BossCardRenderer.color = new Color(color.r, color.g, color.b, 0);
     }
@@ -41,11 +38,13 @@ public class SpawnBossScript : MonoBehaviour
             var playerPosition = PlayerController.instance.transform.position;
             var center = BoxCollider2D.transform.position;
             
+            //hideUI
+            UIController.instance.gameObject.SetActive(false);
             
             PlayerController.instance.gameObject.transform.position = Vector3.Lerp(playerPosition, center, 0.25f);;
             StartCoroutine(ChangeAlphaChannelToValueOverTiem(1, 0.25f));
             BoxCollider2D.enabled = false;
-            AudioManager.playSFX(20);
+            AudioManager.instance.playSFX(20);
             StartCoroutine(FadeBossCardAfterTime());
         }
     }
@@ -58,6 +57,8 @@ public class SpawnBossScript : MonoBehaviour
         Boss.SetActive(true);
         //Enable player movement
         PlayerController.instance.canMove = true;
+        //unUI
+        UIController.instance.gameObject.SetActive(true);
 
     }
     

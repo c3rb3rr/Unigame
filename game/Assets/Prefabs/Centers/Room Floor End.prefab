@@ -49,7 +49,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562264389360834872}
   m_BodyType: 1
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -2156,38 +2156,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8613033837565033621}
     m_Modifications:
-    - target: {fileID: 5979360831899887129, guid: 881373d008ec84a4983fecea866b9251, type: 3}
-      propertyPath: m_speed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5979360831899887129, guid: 881373d008ec84a4983fecea866b9251, type: 3}
-      propertyPath: m_jumpForce
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013412193563674673, guid: 881373d008ec84a4983fecea866b9251, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013412193563674673, guid: 881373d008ec84a4983fecea866b9251, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039759807298843767, guid: 881373d008ec84a4983fecea866b9251, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117496494271622328, guid: 881373d008ec84a4983fecea866b9251, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117496494271622328, guid: 881373d008ec84a4983fecea866b9251, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117496494271622335, guid: 881373d008ec84a4983fecea866b9251, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6117496494702449684, guid: 881373d008ec84a4983fecea866b9251, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2236,6 +2204,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'BossController '
       objectReference: {fileID: 0}
+    - target: {fileID: 6880461973121303354, guid: 881373d008ec84a4983fecea866b9251, type: 3}
+      propertyPath: LevelExit
+      value: 
+      objectReference: {fileID: 367489756178121607}
+    - target: {fileID: 6880461973121303354, guid: 881373d008ec84a4983fecea866b9251, type: 3}
+      propertyPath: RoomFloor
+      value: 
+      objectReference: {fileID: 1762343891657598382}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 881373d008ec84a4983fecea866b9251, type: 3}
 --- !u!4 &6812478538793480929 stripped
@@ -2253,6 +2229,10 @@ PrefabInstance:
     - target: {fileID: 5284127364131914760, guid: 669b483bb3a90f54cacd81cda0ec2944, type: 3}
       propertyPath: m_Name
       value: Level Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284127364131914760, guid: 669b483bb3a90f54cacd81cda0ec2944, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6752027563759153295, guid: 669b483bb3a90f54cacd81cda0ec2944, type: 3}
       propertyPath: m_RootOrder
@@ -2300,6 +2280,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 669b483bb3a90f54cacd81cda0ec2944, type: 3}
+--- !u!1 &367489756178121607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5284127364131914760, guid: 669b483bb3a90f54cacd81cda0ec2944, type: 3}
+  m_PrefabInstance: {fileID: 5498165254528862095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1295186629129156352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6752027563759153295, guid: 669b483bb3a90f54cacd81cda0ec2944, type: 3}

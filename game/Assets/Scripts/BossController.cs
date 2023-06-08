@@ -12,7 +12,6 @@ public class BossController : MonoBehaviour
     public Animator anim;
     public int heathPoints;
     public bool isAttacking;
-    public AudioManager audioManager;
     public bool isWaiting = true;
     public RoomFloor RoomFloor;
     public GameObject LevelExit;
@@ -23,7 +22,6 @@ public class BossController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioManager = GetComponent<AudioManager>();
         RoomFloor = GetComponent<RoomFloor>();
         //switch to combat after 3s
         StartCoroutine(WaitForCombat());
@@ -94,7 +92,7 @@ public class BossController : MonoBehaviour
     {
         if (swordHitbox.isActiveAndEnabled && other.CompareTag("Player"))
         {
-            audioManager.playSFX(18);
+            AudioManager.instance.playSFX(18);
             PlayerHealthController.instance.DamagePlayer();
         }
     }
@@ -105,7 +103,7 @@ public class BossController : MonoBehaviour
         hitCounter++;
         if (hitCounter % 10 == 0)
         {
-            audioManager.playSFX(19);
+            AudioManager.instance.playSFX(19);
             anim.SetTrigger("Hurt");
         }
 
