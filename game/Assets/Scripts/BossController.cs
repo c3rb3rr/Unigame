@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
@@ -10,12 +12,14 @@ public class BossController : MonoBehaviour
     public bool enemyActive;
     private Vector3 _moveDirection;
     public Animator anim;
-    public int heathPoints;
+    public int healthPoints;
     public bool isAttacking;
     public bool isWaiting = true;
     public RoomFloor RoomFloor;
     public GameObject LevelExit;
     public float shootRange;
+    public Slider bossHealthSlider;
+    public GameObject BossHealthBar;
 
     public int hitCounter = 1;
 
@@ -23,14 +27,17 @@ public class BossController : MonoBehaviour
     void Start()
     {
         RoomFloor = GetComponent<RoomFloor>();
+        BossHealthBar.SetActive(true);
         //switch to combat after 3s
         StartCoroutine(WaitForCombat());
+        bossHealthSlider.maxValue = healthPoints;
+        bossHealthSlider.value = healthPoints;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (body.isVisible && PlayerController.instance.gameObject.activeInHierarchy && heathPoints > 0 && !isWaiting)
+        if (body.isVisible && PlayerController.instance.gameObject.activeInHierarchy && healthPoints > 0 && !isWaiting)
         {
 
 
@@ -107,11 +114,13 @@ public class BossController : MonoBehaviour
             anim.SetTrigger("Hurt");
         }
 
-        heathPoints -= damage;
+        healthPoints -= damage;
+        bossHealthSlider.value = healthPoints;
 
-        if (heathPoints <= 0)
+        if (healthPoints <= 0)
         {
             StartCoroutine(FadeAlphaToZero( 4f));
+            BossHealthBar.SetActive(false);
             rb2d.simulated = false;
             anim.SetTrigger("Death");
             UnlockDoors();
@@ -121,7 +130,7 @@ public class BossController : MonoBehaviour
     private void UnlockDoors()
     {
         LevelExit.SetActive(true);
-        RoomFloor.theRoom.OpenDoors();
+        // RoomFloor.theRoom.OpenDoors();
     }
 
     private IEnumerator FadeAlphaToZero(float duration)

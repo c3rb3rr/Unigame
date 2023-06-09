@@ -7,7 +7,6 @@ public class Bandit : MonoBehaviour
     private Animator m_animator;
     private Rigidbody2D m_body2d;
     private BossController _bossController;
-    private AudioManager _audioManager;
     
     void Start()
     {
