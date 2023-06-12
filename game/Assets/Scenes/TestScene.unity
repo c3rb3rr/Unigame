@@ -2655,6 +2655,8 @@ MonoBehaviour:
   - {fileID: 348662757}
   - {fileID: 67180391}
   - {fileID: 1853792033}
+  - {fileID: 1853792033}
+  - {fileID: 1853792033}
 --- !u!1 &1067268038
 GameObject:
   m_ObjectHideFlags: 0
@@ -4863,6 +4865,11 @@ MonoBehaviour:
   healthSlider: {fileID: 414320536}
   healthText: {fileID: 1713407807}
   deathScreen: {fileID: 1067268038}
+  betweenLevelScreen: {fileID: 0}
+  fadeSpeed: 0
+  newGameSceneButton: 
+  menuSceneButton: 
+  pauseMenu: {fileID: 0}
 --- !u!1 &1938132362
 GameObject:
   m_ObjectHideFlags: 0

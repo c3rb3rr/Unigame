@@ -33,6 +33,10 @@ public class PlayerBullet : MonoBehaviour
         {
             other.GetComponent<EnemyController>().DamageEnemy(damage);
         }
+        else if (other.tag == "Boss")
+        {
+            other.GetComponent<BossController>().DamageEnemy(damage);
+        }
     }
 
     private void OnBecameInvisible()
