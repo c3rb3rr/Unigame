@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public static CameraController Instance;
+    public static CameraController instance;
     public float moveSpeed;
     public Transform target;
+    public Camera mainCamera;
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
-    // Start is called before the first frame update
+    
     void Start()
     {
         

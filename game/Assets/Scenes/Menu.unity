@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51837fdfee29c249ae6df495714fb6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chooseLevelToStart: TestLevel76
+  chooseLevelToStart: CharacterSelect
 --- !u!1 &1193852067
 GameObject:
   m_ObjectHideFlags: 0

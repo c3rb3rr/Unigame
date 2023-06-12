@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour
 
     //pausing and unpausing the game
     public bool isPaused;
+
+    public Transform startPoint;
     private void Awake()
     {
         instance = this;
@@ -18,6 +20,8 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerController.instance.transform.position = startPoint.position;
+        PlayerController.instance.canMove = true;
         Time.timeScale = 1f;
     }
 
@@ -41,6 +45,8 @@ public class LevelManager : MonoBehaviour
         UIController.instance.StartFadeToBlack();
         // ????????
         yield return new WaitForSeconds(waitingLoadingTime);
+        CharacterTracker.instance.currentHealth = PlayerHealthController.instance.currentHP;
+        CharacterTracker.instance.maxHealth = PlayerHealthController.instance.maxHP;
         SceneManager.LoadScene(nextLevel);
     }
 

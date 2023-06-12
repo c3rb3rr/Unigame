@@ -15,12 +15,15 @@ public class PlayerController : MonoBehaviour
     private Camera _cam;
     public Animator anim;
     // reference to the bullet that we want to fire
-    public GameObject bullet;
-    //from where we are fireing the bullet (position on the world)
-    public Transform fireStartPoint;
-    // Start is called before the first frame update
-    public float fireOfRate;
-    private float _bulletCounter;
+    
+    //moved to Gun script
+    // public GameObject bullet;
+    // //from where we are fireing the bullet (position on the world)
+    // public Transform fireStartPoint;
+    // // Start is called before the first frame update
+    // public float fireOfRate;
+    // private float _bulletCounter;
+    
     // used for changing the alfa channel while invincible in playerHealthController
     public SpriteRenderer bodySpriteRenderer;
 
@@ -40,14 +43,20 @@ public class PlayerController : MonoBehaviour
     // player shouldnt move after completing the level
     public bool canMove = true; // at start player can move
 
+    public List<Gun> availableGuns = new List<Gun>();
+    [HideInInspector] 
+    public int currentGun;
+
     private void Awake()
     {
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
-        _cam = Camera.main;
+        // _cam = Camera.main;
+        
         _activeMoveSpeed = moveSpeed;
     }
 
@@ -66,7 +75,8 @@ public class PlayerController : MonoBehaviour
             // position of mouse
             Vector3 mousePos = Input.mousePosition;
             // position of main camera
-            Vector3 screenPoint = _cam.WorldToScreenPoint(transform.localPosition);
+            // Vector3 screenPoint = _cam.WorldToScreenPoint(transform.localPosition);
+            Vector3 screenPoint = CameraController.instance.mainCamera.WorldToScreenPoint(transform.localPosition);
 
             //rotating player
             if (mousePos.x < screenPoint.x) // to the left of the player
@@ -86,22 +96,39 @@ public class PlayerController : MonoBehaviour
             float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
             gunArm.rotation = Quaternion.Euler(0, 0, angle);
 
-            if (Input.GetMouseButtonDown(0)) // if lpm  is clicked
-            {
-                // create a copy of specific object
-                Instantiate(bullet, fireStartPoint.position, fireStartPoint.rotation);
-                _bulletCounter = fireOfRate;
-                RandomShootingSfx();
-            }
+            // if (Input.GetMouseButtonDown(0)) // if lpm  is clicked
+            // {
+            //     // create a copy of specific object
+            //     Instantiate(bullet, fireStartPoint.position, fireStartPoint.rotation);
+            //     _bulletCounter = fireOfRate;
+            //     RandomShootingSfx();
+            // }
+            //
+            // if (Input.GetMouseButton(0))
+            // {
+            //     _bulletCounter -= Time.deltaTime;
+            //     if (_bulletCounter <= 0)
+            //     {
+            //         Instantiate(bullet, fireStartPoint.position, fireStartPoint.rotation);
+            //         _bulletCounter = fireOfRate;
+            //         RandomShootingSfx();
+            //     }
+            // }
 
-            if (Input.GetMouseButton(0))
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
-                _bulletCounter -= Time.deltaTime;
-                if (_bulletCounter <= 0)
+                if (availableGuns.Count > 0)
                 {
-                    Instantiate(bullet, fireStartPoint.position, fireStartPoint.rotation);
-                    _bulletCounter = fireOfRate;
-                    RandomShootingSfx();
+                    currentGun++;
+                    if (currentGun >= availableGuns.Count)
+                    {
+                        currentGun = 0;
+                    }
+                    SwitchGun();
+                }
+                else
+                {
+                    Debug.LogError("Player has 0 guns");
                 }
             }
 
@@ -152,10 +179,20 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isPlayerMoving", false);
         }
     }
-
+    
     public void RandomShootingSfx()
     {
         playerShooting = Random.Range(11, 16);
         AudioManager.instance.playSFX(playerShooting);
+    }
+
+    public void SwitchGun()
+    {
+        foreach (Gun theGun in availableGuns)
+        {
+            theGun.gameObject.SetActive(false);
+        }
+
+        availableGuns[currentGun].gameObject.SetActive(true);
     }
 }
