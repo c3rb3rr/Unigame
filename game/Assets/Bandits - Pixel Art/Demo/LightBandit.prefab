@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4805181885227780
 Transform:
   m_ObjectHideFlags: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1689866831511430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.541, y: -0.03599999, z: 0}
-  m_LocalScale: {x: 2.373337, y: 2.7066555, z: 1.7067}
+  m_LocalScale: {x: 2.3821185, y: 2.7066555, z: 1.7067}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2263529002435941390}
@@ -50,8 +50,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8b435a8dc3f604e9a13c4acd7081c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 4
-  m_jumpForce: 7.5
 --- !u!95 &95346456782871180
 Animator:
   serializedVersion: 5
@@ -136,7 +134,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -189,11 +187,15 @@ MonoBehaviour:
   moveSpeed: 4
   enemyActive: 1
   anim: {fileID: 95346456782871180}
-  heathPoints: 2000
+  healthPoints: 0
   isAttacking: 0
-  audioManager: {fileID: 0}
   isWaiting: 1
-  shootRange: 3.5
+  RoomFloor: {fileID: 0}
+  LevelExit: {fileID: 0}
+  shootRange: 3.2
+  bossHealthSlider: {fileID: 0}
+  BossHealthBar: {fileID: 0}
+  rewardBox: {fileID: 0}
   hitCounter: 0
 --- !u!1 &6626161442433586883
 GameObject:
@@ -207,11 +209,11 @@ GameObject:
   - component: {fileID: 6069049193712956262}
   m_Layer: 8
   m_Name: SwordHitbox
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2263529002435941390
 Transform:
   m_ObjectHideFlags: 0
@@ -237,10 +239,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.16383219}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -251,5 +253,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.3276637}
   m_EdgeRadius: 0

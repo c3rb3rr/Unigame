@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -20,6 +21,7 @@ public class BossController : MonoBehaviour
     public float shootRange;
     public Slider bossHealthSlider;
     public GameObject BossHealthBar;
+    public GameObject rewardBox;
 
     public int hitCounter = 1;
 
@@ -121,17 +123,15 @@ public class BossController : MonoBehaviour
         {
             StartCoroutine(FadeAlphaToZero( 4f));
             BossHealthBar.SetActive(false);
+            var box = Instantiate(rewardBox, body.transform.position, body.transform.rotation);
+            box.SetActive(true);
             rb2d.simulated = false;
             anim.SetTrigger("Death");
-            UnlockDoors();
+            var exit = Instantiate(LevelExit);
+            centerGameObject(exit, Camera.main);
         }
     }
-
-    private void UnlockDoors()
-    {
-        LevelExit.SetActive(true);
-        // RoomFloor.theRoom.OpenDoors();
-    }
+    
 
     private IEnumerator FadeAlphaToZero(float duration)
     {
@@ -143,6 +143,11 @@ public class BossController : MonoBehaviour
             body.color = Color.Lerp(startColor, endColor, time/duration);
             yield return null;
         }
+    }
+    
+    void centerGameObject(GameObject gameOBJToCenter, Camera cameraToCenterOBjectTo, float zOffset = 2.6f)
+    {
+        gameOBJToCenter.transform.position = cameraToCenterOBjectTo.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, cameraToCenterOBjectTo.nearClipPlane + zOffset));
     }
 
 }

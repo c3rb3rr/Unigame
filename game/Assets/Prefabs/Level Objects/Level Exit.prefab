@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5572742115079235467}
   - component: {fileID: 8055803767556875622}
   - component: {fileID: 2776909077824864050}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Level Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,3 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60365e9fef3b974dbde760fd7c77f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelToLoad: Victory
