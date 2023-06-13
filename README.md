@@ -1,3 +1,5 @@
-# abstrakcyjne_projekt - Roguelike game
+# Projekt programistyczny Roguelike game
+## Autorzy: Patryk Wypych, Paweł Knapczyk
 
-Patryk Wypych
+Unity ver.: 2021.3.16f1
+
